@@ -1,8 +1,16 @@
-function App() {
+import { Provider } from 'react-redux'
+import ContactList from './components/ContactList'
+import ContactForm from './components/Form'
+import store from './store'
+import GlobalStyle from './style'
+
+const App: React.FC = () => {
   return (
-    <>
-      <h1>hello, world!</h1>
-    </>
+    <Provider store={store}>
+      <GlobalStyle />
+      <ContactForm />
+      <ContactList />
+    </Provider>
   )
 }
 
