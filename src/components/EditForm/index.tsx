@@ -38,7 +38,7 @@ const EditForm: React.FC<FormEditorProps> = ({ contactId, onClose }) => {
     e.preventDefault()
 
     if (formData.fullName && formData.email && formData.phone) {
-      if (formData.fullName.includes(' ')) {
+      if (formData.fullName.includes(' ') && formData.phone.length === 11) {
         dispatch(
           editContact({
             id: contactId,
