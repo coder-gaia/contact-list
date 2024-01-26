@@ -72,7 +72,11 @@ const ContactForm: React.FC = () => {
           type="number"
           name="phone"
           value={formData.phone}
-          onChange={handleChange}
+          onChange={(e) =>
+            e.target.value.length <= 11
+              ? handleChange(e)
+              : alert('the phone must have 11 characters')
+          }
         />
       </FormLabel>
 

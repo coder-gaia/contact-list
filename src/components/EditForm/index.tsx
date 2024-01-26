@@ -86,7 +86,7 @@ const EditForm: React.FC<FormEditorProps> = ({ contactId, onClose }) => {
           type="number"
           name="phone"
           value={formData.phone}
-          onChange={handleChange}
+          onChange={(e) => e.target.value.length <= 11 && handleChange(e)}
         />
       </FormLabel>
 
